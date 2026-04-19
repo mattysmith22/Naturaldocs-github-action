@@ -1,6 +1,7 @@
-#!/bin/sh -l
+#!/bin/sh
 
-if [ ! -d "$2" ]; then
-    mkdir "$2"
+if [ -n "$2" ] && [ ! -d "$2" ]; then
+    mkdir -p "$2"
 fi
-mono "/opt/Natural Docs/NaturalDocs.exe" "$1"
+
+/opt/naturaldocs/NaturalDocs "$1"
